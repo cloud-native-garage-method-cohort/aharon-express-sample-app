@@ -1,0 +1,11 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: EventListener
+metadata:
+  name: arpfs
+spec:
+  serviceAccountName: tekton-triggers-sa
+  triggers:
+    - bindings:
+        - ref: aharon-rossano-pipeline-from-scratch-pipeline-triggerbinding
+      template:
+        name: aharon-rossano-pipeline-from-scratch-triggertemplate

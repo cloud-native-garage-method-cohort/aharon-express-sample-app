@@ -3,6 +3,9 @@ kind: Task
 metadata:
   name: kustomize-build
 spec:
+  params:
+    - name: image-with-tag
+      description: contains image=image:tag in that format
   workspaces:
     - name: source
       description: contains the cloned git repo
