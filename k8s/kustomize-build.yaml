@@ -11,7 +11,8 @@ spec:
       image: docker.io/enzobarrett/kustomize:latest
       script: |
         #!/bin/sh
-        cd source
+        cd source/k8s
+        kustomize edit set image $(params.image-with-tag)
         kustomize build k8s/ > manifests.yaml
         if [ -f manifests.yaml ]; then
           echo "manifests.yaml successfully generated"
