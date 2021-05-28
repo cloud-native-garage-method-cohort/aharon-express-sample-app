@@ -2,10 +2,10 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: aharon-rossano-pipeline-from-scratch
-    app.kubernetes.io/instance: aharon-rossano-pipeline-from-scratch
-    app.kubernetes.io/name: aharon-rossano-pipeline-from-scratch
-  name: aharon-rossano-pipeline-from-scratch
+    app: express-sample-app
+    app.kubernetes.io/instance: express-sample-app
+    app.kubernetes.io/name: express-sample-app
+  name: express-sample-app
 spec:
   ports:
     - name: http
@@ -13,7 +13,7 @@ spec:
       protocol: TCP
       targetPort: 3000
   selector:
-    app.kubernetes.io/instance: aharon-rossano-pipeline-from-scratch
-    app.kubernetes.io/name: aharon-rossano-pipeline-from-scratch
+    app.kubernetes.io/instance: express-sample-app
+    app.kubernetes.io/name: express-sample-app
   sessionAffinity: None
   type: ClusterIP
